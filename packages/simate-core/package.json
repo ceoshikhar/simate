@@ -1,11 +1,17 @@
 {
   "name": "simate",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A very simple state management tool for your JavaScript applications",
   "author": {
     "name": "Shikhar Sharma",
     "email": "ceoshikhar@gmail.com"
   },
+  "keywords": [
+    "react",
+    "state",
+    "state management",
+    "tool"
+  ],
   "main": "dist/index.js",
   "directories": {
     "example": "example"

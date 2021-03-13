@@ -1,15 +1,21 @@
 {
   "name": "react-simate",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "React integration for Simate",
   "main": "dist/index.js",
   "author": {
     "name": "Shikhar Sharma",
     "email": "ceoshikhar@gmail.com"
   },
+  "keywords": [
+    "react",
+    "state",
+    "state management",
+    "tool"
+  ],
   "license": "MIT",
   "peerDependencies": {
-    "simate": "^0.0.44",
+    "simate": "^0.1.0",
     "react": "^16.8.3 || ^17"
   },
   "peerDependenciesMeta": {

@@ -1,12 +1,23 @@
 {
   "name": "simate",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A very simple state management tool for your JavaScript applications",
   "private": true,
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ceoshikhar/simate.git"
   },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ceoshikhar/simate/issues"
+  },
+  "homepage": "https://github.com/ceoshikhar/simate#readme",
+  "keywords": [
+    "react",
+    "state",
+    "state management",
+    "tool"
+  ],
   "author": {
     "name": "Shikhar Sharma",
     "email": "ceoshikhar@gmail.com"
@@ -38,11 +49,6 @@
       "git add"
     ]
   },
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/ceoshikhar/simate/issues"
-  },
-  "homepage": "https://github.com/ceoshikhar/simate#readme",
   "workspaces": [
     "packages/*"
   ],
