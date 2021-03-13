@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://unpkg.com/simate@latest/dist/simate.min.js"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple example of Simate with vanilla JS</title>
+
+    <style>
+      .box {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+
+      button {
+        margin: 0 1em;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="box">
+      <h3>
+        Count:
+        <span id="count">69</span>
+      </h3>
+
+      <div>
+        <button id="decrement">Decrement</button>
+        <button id="increment">Increment</button>
+      </div>
+    </div>
+
+    <script>
+      // Namespace for `Simate` is `Simate` to call `createSimate` on it.
+      // On projects with bundlers/NodeJS,  you can just do the regular import
+      // TypeScript: `import { makeState } from 'simate';`
+      // JavaScript: `const Simate = require('simate');`
+
+      // Create a simate. For our simple example, it is a number state simate
+      // for our counter.
+      const count = Simate.createSimate(69);
+
+      // On click event listener to increment the count (simate's value) by 1
+      document
+        .getElementById('increment')
+        .addEventListener('click', function () {
+          // Fetch the current state of the count
+          const oldCount = count.get();
+          const newCount = oldCount + 1;
+
+          // Update the state of the count
+          count.set(newCount);
+        });
+
+      // On click event listener to decrement the count (simate's value) by 1
+      document
+        .getElementById('decrement')
+        .addEventListener('click', function () {
+          // Fetch the current state of the count
+          const oldCount = count.get();
+          const newCount = oldCount - 1;
+
+          // Update the state of the count
+          count.set(newCount);
+        });
+
+      // Function to render the count state on the DOM
+      function render() {
+        document.getElementById('count').innerHTML = count.get();
+      }
+
+      // Attach the `render` function to the `count` state so that this function
+      // is triggered everything the `count` state changes, therefore updating
+      // the count value on the DOM.
+      count.attach(render);
+    </script>
+  </body>
+</html>
