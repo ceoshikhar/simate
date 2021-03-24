@@ -8,9 +8,9 @@ import {
 import { genID } from './utils';
 
 export class Simate<TValue = any> {
-  // Simate's value
+  // Simate's value.
   private value: TValue;
-  // Callback functions attached to this Simate's instance
+  // Callback functions attached to this Simate's instance.
   private listeners: Listener[] = [];
 
   constructor(initialValue?: TValue | InitValFunction<TValue>) {
@@ -61,8 +61,8 @@ export class Simate<TValue = any> {
    * the simate's value is mutated via `.set()` method. You can attach as many
    * callback functions you want. This helps us achieve the "reactivity".
    *
-   * @param aListener Function to be attached
-   * @returns An object with `detach()` function to detach that given listener
+   * @param aListener Function to be attached.
+   * @returns An object with `detach()` function to detach that given listener.
    */
   attach(aListener: AttachFunction): { detach: DetachFunction } {
     if (typeof aListener !== 'function') {
@@ -97,6 +97,13 @@ export class Simate<TValue = any> {
   }
 }
 
+/**
+ * Create a new Simate.
+ *
+ * @param initialValue Simate's initial value. This is optional.
+ *
+ * @returns A new Simate.
+ */
 export function createSimate<T>(initialValue?: T) {
   return new Simate<T>(initialValue);
 }
